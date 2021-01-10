@@ -28,7 +28,6 @@ with open(polls_csv, 'r') as csv_file:
         #use if function to calculate each candidate's votes
         if "Khan" in row[2]:
             Khan_votes += 1
-    
         elif "Correy" in row[2]:
             Correy_votes += 1
         elif "Li" in row[2]:
@@ -39,12 +38,24 @@ with open(polls_csv, 'r') as csv_file:
             
         #set variable for total_votes
         total_votes += 1
+        
+    #Calculate the percentage of votes each candidate received
+    Khan_votes_pct = round((Khan_votes/total_votes)*100,2)
+    Correy_votes_pct = round((Correy_votes/total_votes)*100,2)
+    Li_votes_pct = round((Li_votes/total_votes)*100,2)
+    O_Tooley_votes_pct = round((O_Tooley_votes/total_votes)*100,2)
 
-    print(total_votes)
-    print(Khan_votes)
-    print(Correy_votes)
-    print(Li_votes)
-    print(O_Tooley_votes)
+
+    # print(total_votes)
+    # print(Khan_votes)
+    # print(Correy_votes)
+    # print(Li_votes)
+    # print(O_Tooley_votes)
+    print(Khan_votes_pct)
+    print(Correy_votes_pct)
+    print(Li_votes_pct)
+    print(O_Tooley_votes_pct)
+
 
 # print(f'Election Results')
 # print(f'------------------')

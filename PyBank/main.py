@@ -21,8 +21,7 @@ with open(budgets_csv, 'r') as csvfile:
          print(row)
          exit()
         
-        #set variable for total_votes
-        #total_votes += 1
+       
 
 # #Define the functions and accept 'budget_data' as the sole parameter
 # def budgets_data(row):
