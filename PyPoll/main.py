@@ -4,19 +4,56 @@ import csv
 #Create a path to collect the data from the Resources folder
 polls_csv = os.path.join("Resources","election_data.csv")
 
-#Define our functions 
-def print_electionresults(csvrow):
-
-    voter_id = int(row[0])
-    county = str(row[1])
-    candidate = str(row[2])
-
-
 #Read in the CSV file
-with open(polls_csv, 'r') as csvfile
+with open(polls_csv, 'r') as csv_file:
 
     #Split the data on commas
-    csvreader = csv.reader(csvfile, delimiter=',')
+    csv_reader = csv.reader(csv_file, delimiter=',')
 
-    #Loop through the data
-    for row in csvreader:
+    #Read the header row first
+    csv_header = next(csv_file)
+    print(f"Header: {csv_header}")
+
+    #Define our varirables 
+    total_votes = 0
+    Khan_votes = 0
+    Correy_votes = 0
+    Li_votes = 0
+    O_Tooley_votes = 0
+
+    #Loop through the data in our csvfile to find..
+    #...total votes and candidate votes
+    for row in csv_reader:
+
+        #use if function to calculate each candidate's votes
+        if "Khan" in row[2]:
+            Khan_votes += 1
+    
+        elif "Correy" in row[2]:
+            Correy_votes += 1
+        elif "Li" in row[2]:
+            Li_votes += 1
+        elif "O'Tooley" in row[2]:
+            O_Tooley_votes += 1
+        
+            
+        #set variable for total_votes
+        total_votes += 1
+
+    print(total_votes)
+    print(Khan_votes)
+    print(Correy_votes)
+    print(Li_votes)
+    print(O_Tooley_votes)
+
+# print(f'Election Results')
+# print(f'------------------')
+# print(f'Total Votes: {total_votes}')
+# print(f'------------------')
+# print(f'Khan: {Khan_votes}')
+# print(f'Correy:')
+# print(f'Li:')
+# print(f'O'"Tooley:" ')
+# print(f'------------------')
+# print(f'Winner:')
+# print(f'------------------')
