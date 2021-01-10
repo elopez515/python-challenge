@@ -20,6 +20,8 @@ with open(polls_csv, 'r') as csv_file:
     Correy_votes = 0
     Li_votes = 0
     O_Tooley_votes = 0
+    max_votes = 0
+    winner = 0 
 
     #Loop through the data in our csvfile to find..
     #...total votes and candidate votes
@@ -38,23 +40,38 @@ with open(polls_csv, 'r') as csv_file:
             
         #set variable for total_votes
         total_votes += 1
-        
+
     #Calculate the percentage of votes each candidate received
     Khan_votes_pct = round((Khan_votes/total_votes)*100,2)
     Correy_votes_pct = round((Correy_votes/total_votes)*100,2)
     Li_votes_pct = round((Li_votes/total_votes)*100,2)
     O_Tooley_votes_pct = round((O_Tooley_votes/total_votes)*100,2)
 
+    #Create a dictionary holding each candidates total votes
+    dict_candidate_and_votes = {
+        "Khan": Khan_votes ,
+        "Correy": Correy_votes ,
+        "Li": Li_votes ,
+        "O'Tooley": O_Tooley_votes
+    }
+    #print(candidate_and_votes_dict)
+    
+    #Determine who won the election
+    for candidate, votes in dict_candidate_and_votes.items():
+        if votes > max_votes:
+            max_votes = votes
+            winner = candidate
 
+    print(winner)
     # print(total_votes)
     # print(Khan_votes)
     # print(Correy_votes)
     # print(Li_votes)
     # print(O_Tooley_votes)
-    print(Khan_votes_pct)
-    print(Correy_votes_pct)
-    print(Li_votes_pct)
-    print(O_Tooley_votes_pct)
+    # print(Khan_votes_pct)
+    # print(Correy_votes_pct)
+    # print(Li_votes_pct)
+    # print(O_Tooley_votes_pct)
 
 
 # print(f'Election Results')
