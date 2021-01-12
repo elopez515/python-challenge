@@ -12,7 +12,7 @@ with open(polls_csv, 'r') as csv_file:
 
     #Read the header row first
     csv_header = next(csv_file)
-    print(f"Header: {csv_header}")
+    #print(f"Header: {csv_header}")
 
     #Define our varirables 
     total_votes = 0
@@ -47,7 +47,7 @@ with open(polls_csv, 'r') as csv_file:
     Li_votes_pct = round((Li_votes/total_votes)*100,2)
     O_Tooley_votes_pct = round((O_Tooley_votes/total_votes)*100,2)
 
-    #Create a dictionary holding each candidates total votes
+    #Create a dictionary holding each candidate respective total votes
     dict_candidate_and_votes = {
         "Khan": Khan_votes ,
         "Correy": Correy_votes ,
@@ -62,7 +62,7 @@ with open(polls_csv, 'r') as csv_file:
             max_votes = votes
             winner = candidate
 
-    print(winner)
+    # print(winner)
     # print(total_votes)
     # print(Khan_votes)
     # print(Correy_votes)
@@ -75,13 +75,36 @@ with open(polls_csv, 'r') as csv_file:
 
 
 # print(f'Election Results')
-# print(f'------------------')
+# print(f'------------------------')
 # print(f'Total Votes: {total_votes}')
-# print(f'------------------')
-# print(f'Khan: {Khan_votes}')
-# print(f'Correy:')
-# print(f'Li:')
-# print(f'O'"Tooley:" ')
-# print(f'------------------')
-# print(f'Winner:')
-# print(f'------------------')
+# print(f'------------------------')
+# print(f'Khan: {Khan_votes_pct}% ({Khan_votes})')
+# print(f'Correy: {Correy_votes_pct}% ({Correy_votes})')
+# print(f'Li: {Li_votes_pct}% ({Li_votes})')
+# print(f'"O'"'"f'Tooley: {O_Tooley_votes_pct}% ({O_Tooley_votes})')
+# print(f'------------------------')
+# print(f'Winner: {winner}')
+# print(f'------------------------')
+
+Election_Results = f"""
+Election Results
+------------------------
+Total Votes: {total_votes}
+------------------------
+Khan: {Khan_votes_pct}% ({Khan_votes})
+Correy: {Correy_votes_pct}% ({Correy_votes})
+Li: {Li_votes_pct}% ({Li_votes})
+O'Tooley: {O_Tooley_votes_pct}% ({O_Tooley_votes})
+------------------------
+Winner: {winner}
+------------------------
+"""
+print(Election_Results)
+
+#Specifying  the file to write to
+output_path = os.path.join("Analysis", "Election_Results.txt")
+
+#Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as txtfile:
+
+    writer = txtfile.write(Election_Results)
