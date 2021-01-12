@@ -58,14 +58,6 @@ with open(budgets_csv, 'r') as csv_file:
     #calculate the average change using values found in the for previous loop
     average_change = round((net_change_profit_losses/profit_losses_change_count),2)
 
-    # print(greatest_decrease)
-    # print(greatest_decrease_date)
-    # print(greatest_increase_date)
-    # print(greatest_increase)
-    # print(average_change)
-    # print(net_total_profit_losses)
-    # print(total_months)
-
 #create an f string to generate our print financial analysis  
 financial_analysis = f"""
 Financial Analysis
