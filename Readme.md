@@ -34,4 +34,4 @@ In this challenge, our Python script analyzes the votes and calculates each of t
 
   ## Conclusion
 
-For our final script the analysis results wil both print to the terminal and create an export a text file with the our results.
+For our final script, the results of our analysis wil both print to the terminal and export a text file with our results in the Analysis folders.
