@@ -66,6 +66,7 @@ with open(budgets_csv, 'r') as csv_file:
     # print(net_total_profit_losses)
     # print(total_months)
 
+#create an f string to generate our print financial analysis  
 financial_analysis = f"""
 Financial Analysis
 -----------------------
@@ -76,3 +77,11 @@ Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})
 Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})
 """
 print(financial_analysis)
+
+#Specifying  the file to write to
+output_path = os.path.join("Analysis", "Financial_Analysis.txt")
+
+#Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as txtfile:
+
+    writer = txtfile.write(financial_analysis)
