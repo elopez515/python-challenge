@@ -36,8 +36,7 @@ with open(polls_csv, 'r') as csv_file:
             Li_votes += 1
         elif "O'Tooley" in row[2]:
             O_Tooley_votes += 1
-        
-            
+         
         #set variable for total_votes
         total_votes += 1
 
@@ -54,7 +53,6 @@ with open(polls_csv, 'r') as csv_file:
         "Li": Li_votes ,
         "O'Tooley": O_Tooley_votes
     }
-    #print(candidate_and_votes_dict)
     
     #Determine who won the election
     for candidate, votes in dict_candidate_and_votes.items():
@@ -62,30 +60,7 @@ with open(polls_csv, 'r') as csv_file:
             max_votes = votes
             winner = candidate
 
-    # print(winner)
-    # print(total_votes)
-    # print(Khan_votes)
-    # print(Correy_votes)
-    # print(Li_votes)
-    # print(O_Tooley_votes)
-    # print(Khan_votes_pct)
-    # print(Correy_votes_pct)
-    # print(Li_votes_pct)
-    # print(O_Tooley_votes_pct)
-
-
-# print(f'Election Results')
-# print(f'------------------------')
-# print(f'Total Votes: {total_votes}')
-# print(f'------------------------')
-# print(f'Khan: {Khan_votes_pct}% ({Khan_votes})')
-# print(f'Correy: {Correy_votes_pct}% ({Correy_votes})')
-# print(f'Li: {Li_votes_pct}% ({Li_votes})')
-# print(f'"O'"'"f'Tooley: {O_Tooley_votes_pct}% ({O_Tooley_votes})')
-# print(f'------------------------')
-# print(f'Winner: {winner}')
-# print(f'------------------------')
-
+#Create an print function for our election results as an f string
 Election_Results = f"""
 Election Results
 ------------------------
